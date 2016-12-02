@@ -9,9 +9,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Belk Library</title>
+        <link rel="stylesheet" href="styles/main.css" type="text/css"/>
     </head>
     <body>
-        <header><img src="images/belk-02.jpg" alt="Belk Library"></header>
+        <header>
+            <img src="images/belk-02.jpg" alt="Belk Library">
+            <h1>Belk Library</h1>
+        </header>
+        <nav>
+            <a href="">Check out a book</a>
+            <br>
+            <a href="">Manage checked out books</a>
+        </nav>
     </body>
 </html>
