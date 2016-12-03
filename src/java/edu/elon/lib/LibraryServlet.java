@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import data.LibraryDB;
 /**
  *
  * @author Jacob_Wells
@@ -40,15 +41,21 @@ public class LibraryServlet extends HttpServlet {
             System.out.println("setting to join");
             action = "join";
         }
-
         if (action.equals("join")) {
             System.out.println("Going to Index");
             url = "/index.jsp";
-        }
-        
-        if (action.equals("checkOut")){
-            url = "/checkOut.jsp";
+        }else if (action.equals("checkOut")){
+            url = "/bookCheckout.jsp";
             System.out.println("Checking Out");
+        }else if(action.equals("checkedOut")){
+            url = "/thanks.jsp";
+            
+            String first = request.getParameter("firstName");
+            String last = request.getParameter("lastName");
+            String email = request.getParameter("email");
+            String title = request.getParameter("bookTitle");
+            
+            LibraryDB.checkOut(first, last, email, title);
         }
 
         getServletContext().getRequestDispatcher(url).forward(request, response);

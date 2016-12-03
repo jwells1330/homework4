@@ -19,7 +19,7 @@ public class LibraryDB {
         PreparedStatement ps = null;
 
         String query
-                = "INSERT INTO User (FirstName, LastName, Email, BookTitle) "
+                = "INSERT INTO checkedoutbooks (FirstName, LastName, Email, BookTitle) "
                 + "VALUES (?, ?, ?, ?)";
 
         try {

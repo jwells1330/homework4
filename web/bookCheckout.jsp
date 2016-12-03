@@ -12,7 +12,7 @@
 <nav>
   <h2>Checkout a book</h2>
   <form action="library" method="post">
-      <input type="hidden" name="action" value="add">
+      <input type="hidden" name="action" value="checkedOut">
       <p><label for="firstName">First Name:</label>
           <input name="firstName" type="text" class="text" 
                  id="firstName" autofocus 
