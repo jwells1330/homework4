@@ -18,9 +18,9 @@
             <h1>Belk Library</h1>
         </header>
         <nav>
-            <a href="">Check out a book</a>
+            <a href="library?action=checkOut">Check out a book</a>
             <br>
-            <a href="">Manage checked out books</a>
+            <a href="library?action=manage">Manage checked out books</a>
         </nav>
     </body>
 </html>
