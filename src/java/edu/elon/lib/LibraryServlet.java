@@ -1,3 +1,5 @@
+package edu.elon.lib;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Jacob_Wells
  */
-public class library extends HttpServlet {
+public class LibraryServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,18 +31,27 @@ public class library extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet library</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet library at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
+        String url = "/index.jsp";
+        String action = request.getParameter("action");
+        System.out.println(action);
+
+        if (action == null) {
+            System.out.println("setting to join");
+            action = "join";
         }
+
+        if (action.equals("join")) {
+            System.out.println("Going to Index");
+            url = "/index.jsp";
+        }
+        
+        if (action.equals("checkOut")){
+            url = "/checkOut.jsp";
+            System.out.println("Checking Out");
+        }
+
+        getServletContext().getRequestDispatcher(url).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
