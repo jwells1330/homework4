@@ -12,20 +12,38 @@ body {
     font-size: 1em;
     width: 100%
 }
-header{
+
+#wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+/*header{
     margin: auto;
     width: 50%; 
-}
+}*/
 header h1{
-    margin: auto;
-    width: 50%;
+  text-align: center;
 }
+
+header img {
+  display: block;
+  width: 80%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  border-top: navy 2px solid;
+  width: 100%;
+}
+
 nav{
     padding: .5em;
     border-style: solid;
     border-color: red;
-    border-width: .3em;
+    border-width: .2em;
     
     margin: auto;
-    width: 60%;
+    width: 100%;
 }
