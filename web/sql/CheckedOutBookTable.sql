@@ -1,7 +1,4 @@
-/**
- * Author:  jwells8
- * Created: Dec 2, 2016
- */
+/*Copyright © 2016 Sarah Allen and Jacob Wells*/
 
 USE appsbyjacobwells;
 DROP TABLE IF EXISTS checkedOutBooks;

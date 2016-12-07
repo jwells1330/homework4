@@ -1,10 +1,6 @@
 package edu.elon.lib;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*Copyright © 2016 Sarah Allen and Jacob Wells*/
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -69,7 +65,7 @@ public class LibraryServlet extends HttpServlet {
             request.setAttribute("title", title);
             request.setAttribute("due", simpleDate);
         }else if(action.equals("manage")){
-            url = "";
+            url = "/manageCheckedoutBooks.jsp";
             
             ArrayList<Book> books = LibraryDB.getCheckedOut();
             

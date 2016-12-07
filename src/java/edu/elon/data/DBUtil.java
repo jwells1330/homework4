@@ -1,14 +1,13 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package edu.elon.data;
+/*Copyright © 2016 Sarah Allen and Jacob Wells*/
 
-/**
- *
- * @author Jacob_Wells
- */
+
 import java.sql.*;
 
 public class DBUtil {
