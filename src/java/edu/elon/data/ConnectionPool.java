@@ -1,4 +1,4 @@
-package data;
+package edu.elon.data;
 
 /**
  * @author Jacob_Wells

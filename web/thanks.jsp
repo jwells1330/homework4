@@ -9,8 +9,8 @@
 <c:import url="/includes/header.html"/>
 
 <nav>Thank you for your patronage of the Belk Library.  You've successfully
-    checked out the book, (_______).  Please note that this book is due 
-    back on (__________).  A friendly email reminder will be sent to you if
+    checked out the book, ${title}.  Please note that this book is due 
+    back on ${due}.  A friendly email reminder will be sent to you if
     your book becomes overdue.
 
     <a href="library?action=join">Return to front page</a>

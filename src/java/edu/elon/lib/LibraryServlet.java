@@ -13,7 +13,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import data.LibraryDB;
+import edu.elon.data.LibraryDB;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 /**
  *
  * @author Jacob_Wells
@@ -35,18 +40,14 @@ public class LibraryServlet extends HttpServlet {
 
         String url = "/index.jsp";
         String action = request.getParameter("action");
-        System.out.println(action);
 
         if (action == null) {
-            System.out.println("setting to join");
             action = "join";
         }
         if (action.equals("join")) {
-            System.out.println("Going to Index");
             url = "/index.jsp";
         }else if (action.equals("checkOut")){
             url = "/bookCheckout.jsp";
-            System.out.println("Checking Out");
         }else if(action.equals("checkedOut")){
             url = "/thanks.jsp";
             
@@ -55,7 +56,28 @@ public class LibraryServlet extends HttpServlet {
             String email = request.getParameter("email");
             String title = request.getParameter("bookTitle");
             
-            LibraryDB.checkOut(first, last, email, title);
+            Calendar calendar = GregorianCalendar.getInstance();
+            calendar.add(Calendar.WEEK_OF_YEAR, 2);
+            Date due = calendar.getTime();
+            java.sql.Date sqlDue = new java.sql.Date(due.getTime());
+            
+            LibraryDB.checkOut(first, last, email, title, sqlDue);
+            
+            SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+            String simpleDate = sdf.format(due);
+            
+            request.setAttribute("title", title);
+            request.setAttribute("due", simpleDate);
+        }else if(action.equals("manage")){
+            url = "";
+            
+            ArrayList<Book> books = LibraryDB.getCheckedOut();
+            
+        }else if(action.equals("checkIn")){
+            LibraryDB.checkIn(request.getParameter("bookTitle"), request.getParameter("email"));
+            url = "/library?action=manage";
+            
+            
         }
 
         getServletContext().getRequestDispatcher(url).forward(request, response);
