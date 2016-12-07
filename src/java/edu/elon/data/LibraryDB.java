@@ -57,7 +57,7 @@ public class LibraryDB {
                 String lastName = rs.getString("LastName");
                 String email = rs.getString("Email");
                 String title = rs.getString("BookTitle");
-                java.sql.Date dueDate = rs.getDate("FirstName");
+                java.sql.Date dueDate = rs.getDate("DueDate");
 
                 Book book = new Book(firstName, lastName, email, title, dueDate);
                 books.add(book);
@@ -76,18 +76,32 @@ public class LibraryDB {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
+        ResultSet rs = null;
 
         String query
-                = "DELETE FROM checkedoutbooks WHERE Email = ? and BookTitle = ?";
+                ="Select BookID FROM checkedoutbooks where Email = ? and BookTitle = ?";
 
         try {
             ps = connection.prepareStatement(query);
-            ps.setString(1, title);
-            ps.setString(2, email);
+            ps.setString(2, title);
+            ps.setString(1, email);
+            ps.executeQuery();
+            
+            rs = ps.getResultSet();
+            rs.next();
+            int id = rs.getInt("BookId");
+            
+            query
+                = "DELETE FROM checkedoutbooks WHERE BookId = ?";
+            
+            ps = connection.prepareStatement(query);
+            ps.setInt(1, id);
             ps.executeUpdate();
+            
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
+            DBUtil.closeResultSet(rs);
             DBUtil.closePreparedStatement(ps);
             pool.freeConnection(connection);
         }

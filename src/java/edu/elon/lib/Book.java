@@ -38,7 +38,7 @@ public class Book implements Serializable{
         Date date = new Date(sqlDate.getTime());
         Date today = new Date();
         if(today.before(date)){
-            overDue = true;
+            overDue = false;
         }
         
         
@@ -60,8 +60,12 @@ public class Book implements Serializable{
     public String getDueDate(){
         return dueDate;
     }
-    public boolean getOverDue(){
-        return overDue;
+    public String getOverDue(){
+        if(overDue){
+            return "Overdue";
+        }else{
+            return "";
+        }
     }
     
     

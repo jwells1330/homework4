@@ -33,10 +33,13 @@ public class LibraryServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        System.out.println("Do Shit");
+        
+        
+        
         String url = "/index.jsp";
         String action = request.getParameter("action");
+        
+        System.out.println("ACTION: " + action);
 
         if (action == null) {
             action = "join";
@@ -69,9 +72,13 @@ public class LibraryServlet extends HttpServlet {
             url = "/manageCheckedoutBooks.jsp";
             ArrayList<Book> books = LibraryDB.getCheckedOut();
             request.setAttribute("booksArray", books);
-            System.out.println("test");
+            System.out.println("DISPLAYING");
         }else if(action.equals("checkIn")){
-            LibraryDB.checkIn(request.getParameter("bookTitle"), request.getParameter("email"));
+            
+            System.out.println("Title: " + request.getParameter("title"));
+            System.out.println("Email: " + request.getParameter("email"));
+            LibraryDB.checkIn(request.getParameter("title").trim(), request.getParameter("email").trim());
+            
             url = "/library?action=manage";
             
             

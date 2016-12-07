@@ -22,13 +22,13 @@
       <td>${item.email}</td>
       <td>${item.title}</td>
       <td>${item.dueDate}</td>
-      <td>${item.overdue}</td>
+      <td>${item.overDue}</td>
       <td>
-        <form action="" method="post">
+        <form action="library" method="post">
         <input type="hidden" name="email" 
-               value=${item.email}>
+               value="${item.email}">
         <input type="hidden" name="title" 
-               value=${item.title}>
+               value="${item.title}">
         <input type="hidden" name="action" value="checkIn">
         <input type="submit" value="Check In">
       </form>
