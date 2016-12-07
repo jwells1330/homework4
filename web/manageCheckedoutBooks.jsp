@@ -26,11 +26,11 @@
       <td>
         <form action="checkIn" method="post">
         <input type="hidden" name="email" 
-               value=${item.email}>
+               value="${item.email}">
         <input type="hidden" name="title" 
-               value=${item.title}>
+               value="${item.title}">
         <input type="submit" value="Checkin">
-      </form>
+        </form>
       </td>
     </tr>
     </c:forEach>
