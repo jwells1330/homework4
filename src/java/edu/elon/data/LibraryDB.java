@@ -3,6 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+/*Copyright © 2016 Sarah Allen and Jacob Wells*/
+
 package edu.elon.data;
 
 /**
@@ -23,7 +27,7 @@ public class LibraryDB {
         PreparedStatement ps = null;
 
         String query
-                = "INSERT INTO checkedoutbooks (FirstName, LastName, Email, BookTitle, DueDate) "
+                = "INSERT INTO checkedOutBooks (FirstName, LastName, Email, BookTitle, DueDate) "
                 + "VALUES (?, ?, ?, ?, ?)";
 
         try {
@@ -50,7 +54,7 @@ public class LibraryDB {
 
         try {
             Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            rs = stmt.executeQuery("SELECT * FROM checkedoutbooks");
+            rs = stmt.executeQuery("SELECT * FROM checkedOutBooks");
             while (rs.next()) {
                 String firstName = rs.getString("FirstName");
                 String lastName = rs.getString("LastName");
@@ -78,7 +82,7 @@ public class LibraryDB {
         ResultSet rs = null;
 
         String query
-                ="Select BookID FROM checkedoutbooks where Email = ? and BookTitle = ?";
+                ="Select BookID FROM checkedOutBooks where Email = ? and BookTitle = ?";
 
         try {
             ps = connection.prepareStatement(query);
@@ -91,7 +95,7 @@ public class LibraryDB {
             int id = rs.getInt("BookId");
             
             query
-                = "DELETE FROM checkedoutbooks WHERE BookId = ?";
+                = "DELETE FROM checkedOutBooks WHERE BookId = ?";
             
             ps = connection.prepareStatement(query);
             ps.setInt(1, id);

@@ -3,6 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+/*Copyright © 2016 Sarah Allen and Jacob Wells*/
+
 package edu.elon.lib;
 
 import java.io.Serializable;
