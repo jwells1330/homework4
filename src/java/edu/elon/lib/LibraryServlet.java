@@ -72,11 +72,8 @@ public class LibraryServlet extends HttpServlet {
             url = "/manageCheckedoutBooks.jsp";
             ArrayList<Book> books = LibraryDB.getCheckedOut();
             request.setAttribute("booksArray", books);
-            System.out.println("DISPLAYING");
         }else if(action.equals("checkIn")){
             
-            System.out.println("Title: " + request.getParameter("title"));
-            System.out.println("Email: " + request.getParameter("email"));
             LibraryDB.checkIn(request.getParameter("title").trim(), request.getParameter("email").trim());
             
             url = "/library?action=manage";
