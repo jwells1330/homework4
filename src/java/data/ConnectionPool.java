@@ -1,8 +1,6 @@
 package data;
 
-/**
- * @author Jacob_Wells
- */
+/*Copyright © 2016 Sarah Allen and Jacob Wells*/
 
 import java.sql.Connection;
 import java.sql.SQLException;
