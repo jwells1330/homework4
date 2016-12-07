@@ -16,7 +16,7 @@
       <td> </td>
     </tr>
     
-    <!--for each-->
+    <c:forEach var="item" items="${booksArray}">
     <tr>
       <td>${item.firstName} ${item.lastName}</td>
       <td>${item.email}</td>
@@ -33,7 +33,7 @@
       </form>
       </td>
     </tr>
-    
+    </c:forEach>
   </table>
   <br>
   <p id="return"><a href="library?action=join">Return to front page</a></p>
