@@ -24,12 +24,13 @@
       <td>${item.dueDate}</td>
       <td>${item.overdue}</td>
       <td>
-        <form action="checkIn" method="post">
+        <form action="" method="post">
         <input type="hidden" name="email" 
                value=${item.email}>
         <input type="hidden" name="title" 
                value=${item.title}>
-        <input type="submit" value="Checkin">
+        <input type="hidden" name="action" value="checkIn">
+        <input type="submit" value="Check In">
       </form>
       </td>
     </tr>

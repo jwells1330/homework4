@@ -34,6 +34,7 @@ public class LibraryServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
+        System.out.println("Do Shit");
         String url = "/index.jsp";
         String action = request.getParameter("action");
 
@@ -66,9 +67,9 @@ public class LibraryServlet extends HttpServlet {
             request.setAttribute("due", simpleDate);
         }else if(action.equals("manage")){
             url = "/manageCheckedoutBooks.jsp";
-            
             ArrayList<Book> books = LibraryDB.getCheckedOut();
-            
+            request.setAttribute("booksArray", books);
+            System.out.println("test");
         }else if(action.equals("checkIn")){
             LibraryDB.checkIn(request.getParameter("bookTitle"), request.getParameter("email"));
             url = "/library?action=manage";

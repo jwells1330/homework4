@@ -19,6 +19,7 @@ public class Book implements Serializable{
     private String email;
     private String title;
     private String dueDate;
+    private boolean overDue;
     
     public Book() {
         firstName = "";
@@ -26,6 +27,7 @@ public class Book implements Serializable{
         email = "";
         title = "";
         dueDate = "";
+        overDue = true;
     }
     public Book(String firstName, String lastName, String email, String title, java.sql.Date sqlDate){
         this.firstName = firstName;
@@ -34,6 +36,12 @@ public class Book implements Serializable{
         this.title = title;
         
         Date date = new Date(sqlDate.getTime());
+        Date today = new Date();
+        if(today.before(date)){
+            overDue = true;
+        }
+        
+        
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
         this.dueDate = sdf.format(date);
     }
@@ -52,6 +60,9 @@ public class Book implements Serializable{
     public String getDueDate(){
         return dueDate;
     }
+    public boolean getOverDue(){
+        return overDue;
+    }
     
     
     public void setFirstName(String firstName){
@@ -68,5 +79,8 @@ public class Book implements Serializable{
     }
     public void setDueDate(String dueDate){
         this.dueDate = dueDate;
+    }
+    public void setOverDue(boolean overDue){
+        this.overDue = overDue;
     }
 }
