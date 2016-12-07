@@ -51,7 +51,6 @@ public class LibraryDB {
         try {
             Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
             rs = stmt.executeQuery("SELECT * FROM checkedoutbooks");
-            rs.next();
             while (rs.next()) {
                 String firstName = rs.getString("FirstName");
                 String lastName = rs.getString("LastName");

@@ -71,6 +71,7 @@ public class LibraryServlet extends HttpServlet {
         }else if(action.equals("manage")){
             url = "/manageCheckedoutBooks.jsp";
             ArrayList<Book> books = LibraryDB.getCheckedOut();
+                       System.out.println(books.size());
             request.setAttribute("booksArray", books);
         }else if(action.equals("checkIn")){
             

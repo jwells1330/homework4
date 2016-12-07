@@ -4,12 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Jacob_Wells/Desktop/homework4/src/java/edu/elon/data/LibraryDB.java</file>
-            <file>file:/C:/Users/Jacob_Wells/Desktop/homework4/web/index.jsp</file>
+            <file>file:/C:/Users/Jacob_Wells/Desktop/homework4/web/manageCheckedoutBooks.jsp</file>
             <file>file:/C:/Users/Jacob_Wells/Desktop/homework4/src/java/edu/elon/lib/LibraryServlet.java</file>
-            <file>file:/C:/Users/Jacob_Wells/Desktop/homework4/src/java/edu/elon/data/DBUtil.java</file>
             <file>file:/C:/Users/Jacob_Wells/Desktop/homework4/web/thanks.jsp</file>
-            <file>file:/C:/Users/Jacob_Wells/Desktop/homework4/web/bookCheckout.jsp</file>
             <file>file:/C:/Users/Jacob_Wells/Desktop/homework4/src/java/edu/elon/lib/Book.java</file>
+            <file>file:/C:/Users/Jacob_Wells/Desktop/homework4/web/bookCheckout.jsp</file>
+            <file>file:/C:/Users/Jacob_Wells/Desktop/homework4/web/styles/main.css</file>
         </group>
     </open-files>
 </project-private>
