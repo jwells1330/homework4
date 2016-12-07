@@ -1,8 +1,4 @@
-<%-- 
-    Document   : bookCheckout
-    Created on : Dec 3, 2016, 1:52:39 PM
-    Author     : SarahAllen
---%>
+<%--Copyright © 2016 Sarah Allen and Jacob Wells--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -16,7 +12,7 @@
       <p><label for="firstName">First Name:</label>
           <input name="firstName" type="text" class="text" 
                  id="firstName" autofocus 
-                 required
+                 required 
                  title="Enter First Name"</label></p>
       <p><label for="lastName">Last Name:</label>
           <input name="lastName" type="text" class="text" 

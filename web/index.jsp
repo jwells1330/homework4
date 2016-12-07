@@ -1,8 +1,4 @@
-<%-- 
-    Document   : index
-    Created on : Dec 2, 2016, 12:28:16 PM
-    Author     : jwells8
---%>
+<%--Copyright © 2016 Sarah Allen and Jacob Wells--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
