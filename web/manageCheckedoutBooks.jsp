@@ -1,8 +1,4 @@
-<%-- 
-    Document   : manageCheckedoutBooks
-    Created on : Dec 6, 2016, 8:21:54 PM
-    Author     : SarahAllen
---%>
+<%--Copyright © 2016 Sarah Allen and Jacob Wells--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -19,6 +15,25 @@
       <th>Overdue</th>
       <td> </td>
     </tr>
+    
+    <!--for each-->
+    <tr>
+      <td>${item.firstName} ${item.lastName}</td>
+      <td>${item.email}</td>
+      <td>${item.title}</td>
+      <td>${item.dueDate}</td>
+      <td>${item.overdue}</td>
+      <td>
+        <form action="checkIn" method="post">
+        <input type="hidden" name="email" 
+               value=${item.email}>
+        <input type="hidden" name="title" 
+               value=${item.title}>
+        <input type="submit" value="Checkin">
+      </form>
+      </td>
+    </tr>
+    
   </table>
   <br>
   <p id="return"><a href="library?action=join">Return to front page</a></p>
